@@ -8,3 +8,5 @@ src/djangorecipe.egg-info
 .coverage
 htmlcov
 /eggs
+lib
+include
