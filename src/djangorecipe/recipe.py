@@ -95,7 +95,7 @@ class Recipe(object):
               'djangorecipe.manage', 'main')],
             ws, sys.executable, self.options['bin-directory'],
             extra_paths=extra_paths,
-            relative_paths=self.relative_paths,
+            relative_paths=self._relative_paths,
             arguments="'%s.%s'" % (project, self.options['settings']),
             initialization=self.options['initialization'])
 
@@ -109,7 +109,7 @@ class Recipe(object):
                 working_set, sys.executable,
                 self.options['bin-directory'],
                 extra_paths=extra_paths,
-                relative_paths=self.relative_paths,
+                relative_paths=self._relative_paths,
                 arguments="'%s.%s', %s" % (
                     self.options['project'],
                     self.options['settings'],
@@ -185,7 +185,7 @@ class Recipe(object):
                         ws,
                         sys.executable,
                         self.options['bin-directory'],
-                        relative_paths=self.relative_paths,
+                        relative_paths=self._relative_paths,
                         extra_paths=extra_paths,
                         arguments="'%s.%s', logfile='%s'" % (
                             project, self.options['settings'],
